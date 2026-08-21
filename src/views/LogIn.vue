@@ -43,7 +43,7 @@
             @click.prevent="submitForm"
             class="w-full rounded-lg bg-emerald-400 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
           >
-            Sign Up
+            Log In
           </button>
 
           <div

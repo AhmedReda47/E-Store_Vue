@@ -24,7 +24,7 @@
           </span>
         </div>
 
-        <div class="overflow-hidden rounded-xl border border-slate-200">
+        <div class="overflow-hidden rounded-xl border border-slate-200 overflow-x-scroll">
           <table class="min-w-full divide-y divide-slate-200">
             <thead class="bg-slate-50">
               <tr class="text-left text-sm text-slate-500">
@@ -250,7 +250,7 @@ export default {
           this.stripe = Stripe(
             "pk_test_51U59DdRzsKBXlHwgMz4GHuq15H0qZVGCb33pULEI8fdx41fTLA3uvX4HB2iPrjlxvPhuI0XYHbdVeHpfEHmslONt00AytA7k2k"
           );
-        }
+        } 
 
         if (this.card && typeof this.card.unmount === "function") {
           this.card.unmount();
