@@ -118,7 +118,7 @@ export default {
 
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1/products/${category_slug}/${product_slug}/`
+          `/api/v1/products/${category_slug}/${product_slug}/`
         );
         document.title = `${response.data.name} - E-Store`;
 
