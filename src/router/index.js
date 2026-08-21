@@ -1,25 +1,78 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import { createRouter, createWebHistory } from "vue-router";
+import store from "@/store";
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: () => import("@/views/HomeView.vue")
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: "/:category_slug/:product_slug",
+    name: "Product",
+    component: () => import("@/views/Product.vue")
+  },
+  {
+    path: "/:category_slug",
+    name: "Category",
+    component: () => import("@/views/Category.vue")
+  },
+  {
+    path: "/search/",
+    name: "Search",
+    component: () => import("@/views/Search.vue")
+  },
+  {
+    path: "/cart/",
+    name: "Cart",
+    component: () => import("@/views/Cart.vue")
+  },
+  {
+    path: "/sign-up/",
+    name: "SignUp",
+    component: () => import("@/views/SignUp.vue")
+  },
+  {
+    path: "/log-in/",
+    name: "LogIn",
+    component: () => import("@/views/LogIn.vue")
+  },
+  {
+    path: "/my-account",
+    name: "MyAccount",
+    component: () => import("@/views/MyAccount.vue"),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: "/cart/checkout",
+    name: 'Checkout',
+    component: () => import("@/views/Checkout.vue"),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/cart/success',
+    name: 'Success',
+    component: () => import("@/views/Success.vue"), 
   }
-]
+];
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  if (
+    to.matched.some((record) => record.meta.requireLogin) &&
+    !store.state.isAuthenticated
+  ) {
+    next({ name: "LogIn", query: { to: to.path } });
+  } else {
+    next();
+  }
+});
+export default router;
