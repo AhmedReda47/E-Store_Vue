@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     async getProduct() {
-      this.$store.commit("setLoading", true);
+      this.$store.commit("setIsLoading", true);
       const { category_slug, product_slug } = this.$route.params;
 
       try {
@@ -130,7 +130,7 @@ export default {
           "Something went wrong while loading the product.";
         this.loading = false;
       }
-      this.$store.commit("setLoading", false);
+      this.$store.commit("setIsLoading", false);
     },
     addToCart() {
       if (isNaN(this.quantity) || this.quantity < 1) {

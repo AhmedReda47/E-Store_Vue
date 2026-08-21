@@ -130,7 +130,7 @@ export default {
   },
   methods: {
     async getLatestProducts() {
-      this.$store.commit("setLoading", true);
+      this.$store.commit("setIsLoading", true);
       await axios
         .get("/api/v1/latest-products/")
         .then((Response) => {
@@ -139,7 +139,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-      this.$store.commit("setLoading", false);
+      this.$store.commit("setIsLoading", false);
     }
   }
 };

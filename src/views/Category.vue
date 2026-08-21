@@ -45,7 +45,7 @@ export default {
     async getCategory() {
       const categorySlug = this.$route.params.category_slug;
 
-      this.$store.commit("setLoading", true);
+      this.$store.commit("setIsLoading", true);
 
       axios
         .get(`/api/v1/products/${categorySlug}/`)
@@ -57,7 +57,7 @@ export default {
           console.error(error);
         })
         .finally(() => {
-          this.$store.commit("setLoading", false);
+          this.$store.commit("setIsLoading", false);
         });
     }
   }

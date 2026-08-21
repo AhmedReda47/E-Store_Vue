@@ -1,8 +1,10 @@
 <template>
   <article
+    v-bind:to="product.get_absolute_url"
     class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
   >
-    <div class="aspect-[3/3] overflow-hidden bg-slate-100">
+   <router-link v-bind:to="product.get_absolute_url">
+     <div class="aspect-[3/3] overflow-hidden bg-slate-100">
       <img
         :src="product.get_image"
         :alt="product.name"
@@ -25,11 +27,12 @@
           class="rounded-xl bg-slate-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-slate-700"
         >
           <router-link v-bind:to="product.get_absolute_url"
-            >More Info</router-link
+            >More Info ></router-link
           >
         </button>
       </div>
     </div>
+   </router-link>
   </article>
 </template>
 

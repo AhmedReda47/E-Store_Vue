@@ -84,7 +84,7 @@
           <p class="text-center text-sm text-gray-600">
             Already have an account?
             <router-link
-              to="/login"
+              to="/log-in"
               class="font-medium text-emerald-400 hover:text-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               >Login here</router-link
             >
