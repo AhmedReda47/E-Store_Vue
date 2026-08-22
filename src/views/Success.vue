@@ -47,6 +47,7 @@ export default {
   name: "Success",
   mounted() {
     document.title = "Success | E-Store";
+    this.$store.commit("clearCart");
   }
 };
 </script>

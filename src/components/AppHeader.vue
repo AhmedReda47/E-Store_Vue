@@ -172,18 +172,12 @@
 export default {
   data() {
     return {
-      cart: {
-        items: []
-      },
       mobileOpen: false,
       searchQuery: ""
     };
   },
   beforeCreate() {
     this.$store.commit("initializeStore");
-  },
-  mounted() {
-    this.cart = this.$store.state.cart;
   },
   methods: {
     onSearch() {
@@ -197,6 +191,9 @@ export default {
     }
   },
   computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
     cartTotalLength() {
       let totalLength = 0;
       for (let i = 0; i < this.cart.items.length; i++) {
