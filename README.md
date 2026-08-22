@@ -192,8 +192,36 @@ The Django REST Framework backend is maintained separately:
 ### Homepage
 
 ![E-Store homepage](screenshots/homepage.png)
+![E-Store homepage](screenshots/homepage2.png)
 
-<!-- Add verified product-details and shopping-cart screenshots here when available. -->
+### SummerPage
+
+![E-Store summerPage](screenshots/summerpage.png)
+
+### WinterPage
+
+![E-Store winterPage](screenshots/winterpage.png)
+
+### CartPage
+
+![E-Store winterPage](screenshots/cartpage.png)
+
+### MyAccountPage
+
+![E-Store MyAccountPage](screenshots/myaccount.png)
+
+### SearchingPage
+
+![E-Store MyAccountPage](screenshots/searching.png)
+
+### CheckoutPage
+
+![E-Store CheckoutPage](screenshots/checkout.png)
+![E-Store CheckoutPage](screenshots/checkout2.png)
+
+### SuccessPage
+
+![E-Store SuccessPage](screenshots/success.png)
 
 ## 16. 🧪 Testing / Code Quality
 
